@@ -8,8 +8,10 @@
         <v-navigation-drawer v-model="drawer" :clipped="clipped" width="300px" app dark style="padding-bottom: 37px" class="denser-nav z-index-9999"
         >
           <v-list nav dense expand class="disabled-active pt-0">
-            <div class="logo mt-4">
-              <v-img src="/logo/logo.png" />
+            <div class="logo mt-4 cp" @click="handleUrlPage('/dashboad')">
+              <nuxt-link to="/dashboad">
+                <v-img src="/logo/logo.png" />
+              </nuxt-link>
             </div>
             <template v-for="(item, index) in topmenuAdmin">
               <v-list-group v-if="(item.child || []).length !== 0" :key="`${index}-${item.id}`" no-action active-class="primary--text"
@@ -75,7 +77,7 @@
               <nuxt-link class="nuxt-link text-decoration-none" to="#">
                 <v-list-item class="pl-2">
                   <v-list-item-content>
-                    <v-list-item-title class="primary--text">
+                    <v-list-item-title class="primary--text fs-14">
                       Tài khoản của tôi
                     </v-list-item-title>
                   </v-list-item-content>
