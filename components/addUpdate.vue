@@ -2,31 +2,31 @@
   <v-dialog :value="open" @keydown="$event.key === 'Escape' && toggle()" max-width="800px" persistent
   >
     <v-card>
-      <v-card-title class="pt-3 pb-2" style="border-bottom: 1px solid #2b8c8f">
+      <v-card-title class="pt-3 pb-2" >
         {{ $isNullOrEmpty(detailItem) ? ' Tạo mới hồ sơ' : 'Cập nhật hồ sơ' }}
       </v-card-title>
-
+  <v-divider />
       <v-card-text style="max-height: calc(100vh - 13rem); overflow-x: hidden">
         <v-container class="pb-6 pt-5" fluid>
           <v-row>
             <v-col cols="12" class="py-0">
-              <div>Số điện thoại <span class="red--text pl-2">*</span></div>
+              <div>Số điện thoại<span class="red--text pl-1">*</span></div>
               <v-text-field v-model="phone" outlined dense :error-messages="phoneErrors" @input="phoneErrors = []" onKeyPress="if(this.value.length==10) return false;" v-on:keypress="isNumber($event)"></v-text-field>
             </v-col>
             <v-col cols="12" class="py-0">
-              <div>Họ và tên <span class="red--text pl-2">*</span></div>
+              <div>Họ và tên<span class="red--text pl-1">*</span></div>
               <v-text-field v-model="name"  outlined dense :error-messages="nameErrors"  @input="nameErrors = []"></v-text-field>
             </v-col>
             <v-col cols="12" md="6" class="py-0">
-              <div>Giới tính <span class="red--text pl-2">*</span></div>
-              <v-select v-model="sex" :items="listSex" outlined dense ></v-select>
+              <div>Giới tính<span class="red--text pl-1">*</span></div>
+              <v-select v-model="sex" :items="listSex" no-data-text="Không có dữ liệu" outlined dense ></v-select>
             </v-col>
             <v-col cols="12" md="6" class="py-0 ">
-              <div>Nhóm máu <span class="red--text pl-2">*</span></div>
-              <v-select  v-model="bloodGroup" :items="listBloodGroup" outlined dense :error-messages="bloodGroupErrors" @input="bloodGroupErrors = []"></v-select>
+              <div>Nhóm máu<span class="red--text pl-1">*</span></div>
+              <v-select  v-model="bloodGroup" :items="listBloodGroup" no-data-text="Không có dữ liệu" outlined dense :error-messages="bloodGroupErrors" @input="bloodGroupErrors = []"></v-select>
             </v-col>
             <v-col cols="12" md="6" class="py-0 ">
-              <div>Ngày sinh <span class="red--text pl-2">*</span></div>
+              <div>Ngày sinh<span class="red--text pl-1">*</span></div>
               <v-menu v-model="menu" :close-on-content-click="false" transition="scale-transition" offset-y max-width="290px" min-width="290px" >
                 <template v-slot:activator="{ on }">
                   <v-text-field v-on="on" class="color-icon-time fs-15px pb-error-0" v-model="birthday" dense outlined readonly:spellcheck="false"> </v-text-field>
@@ -35,8 +35,8 @@
               </v-menu>
             </v-col>
             <v-col cols="12" md="6" class="py-0">
-              <div>Quốc gia <span class="red--text pl-2">*</span></div>
-              <v-select v-model="country" :items="listCountry" outlined dense
+              <div>Quốc gia<span class="red--text pl-1">*</span></div>
+              <v-select v-model="country" :items="listCountry" no-data-text="Không có dữ liệu" outlined dense
               ></v-select>
             </v-col>
             <v-col cols="12" class="py-0">
@@ -44,16 +44,16 @@
               <v-text-field v-model="email" outlined dense></v-text-field>
             </v-col>
             <v-col cols="12" class="py-0">
-              <div>Địa chỉ <span class="red--text pl-2">*</span></div>
+              <div>Địa chỉ<span class="red--text pl-1">*</span></div>
               <v-text-field v-model="address" outlined dense :error-messages="addressErrors" @input="addressErrors = []"
               ></v-text-field>
             </v-col>
           </v-row>
         </v-container>
       </v-card-text>
-      <v-divider></v-divider>
+      <v-divider />
       <v-card-actions>
-        <v-spacer></v-spacer>
+        <v-spacer />
         <v-btn text  height="40px"  class="orange lighten-2 text-none white--text"  @click="checkAddUpdate">
           <div class="font_size">Hoàn thành</div>
         </v-btn>
