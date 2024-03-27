@@ -1,0 +1,21 @@
+export default {
+  dashboard: 'Dashboard',
+  authorization: 'Authorization',
+  accountManagement: 'Account Management',
+  fullName: 'Full Name',
+  birthday: 'Birthday',
+  phoneNumber: 'Phone Number',
+  email: 'Email',
+  address: 'Address',
+  gender: 'Gender',
+  degree: 'Degree',
+  maritalStatus: 'Marital Status',
+  position: 'Position',
+  department: 'Department',
+  details: 'Details',
+  detail: 'Detail',
+  function: 'Function',
+  record: 'Record',
+  page: 'Page',
+  go: 'Go'
+}

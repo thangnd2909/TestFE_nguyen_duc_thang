@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "full_name": "Nguyễn Đức Thắng",
+    "phone":"0325505511",
+    "birthday":"29/09/1998",
+    "email": "emadre0@paypal.com",
+    "gender": "MALE",
+    "address":"Thanh Hóa",
+    "degree":"Cao Đẳng",
+    "marital_status":"Độc Thân",
+    "position":"Nhân viên",
+    "department": "BU05",
+    "bloodGroup": "A",
+    "country": "vietNanm"
+
+  },
+  {
+    "id": 2,
+    "full_name": "Nguyễn Đức Duy",
+    "phone":"0949520399",
+    "birthday":"25/04/2009",
+    "email": "mwoodier1@netscape.com",
+    "gender": "MALE",
+    "address":"Hải Dương",
+    "degree":"Sinh viên",
+    "marital_status":"Độc Thân",
+    "position":"Thực tập sinh",
+    "department": "BU05",
+    "bloodGroup": "B",
+    "country": "vietNanm"
+  },
+  {
+    "id": 3,
+    "full_name": "Nguyễn Văn Xuân",
+    "phone":"0902273830",
+    "birthday":"27/07/1998",
+    "email": "westabrook2@netscape.com",
+    "gender": "MALE",
+    "address":"Bình Định",
+    "degree":"Đại Học",
+    "marital_status":"Độc Thân",
+    "position":"Nhân viên",
+    "department": "BU03",
+    "bloodGroup":  "AB",
+    "country": "vietNanm"
+  },
+  {
+    "id": 4,
+    "full_name": "Nguyễn Trung kiên",
+    "phone":"0855202019",
+    "birthday":"27/02/1998",
+    "email": "rseymer3@hexun.com",
+    "gender": "MALE",
+    "address":"Hà Nội",
+    "degree":"Đại học",
+    "marital_status":"Độc Thân",
+    "position":"Nhân viên",
+    "department": "BU02",
+    "bloodGroup":  "O",
+    "country": "vietNanm"
+  },
+  {
+    "id": 5,
+    "full_name": "Nguyễn Linh Chi",
+    "phone":"0982966873",
+    "birthday":"12/06/1999",
+    "email": "linhchi@hexun.com",
+    "gender": "FEMALE",
+    "address":"Hà Nội",
+    "degree":"Đại học",
+    "marital_status":"Độc Thân",
+    "position":"Nhân viên",
+    "department": "BU01",
+    "bloodGroup": "0",
+    "country": "vietNanm"
+  }
+]
+
