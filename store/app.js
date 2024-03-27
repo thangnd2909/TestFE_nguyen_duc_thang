@@ -16,8 +16,5 @@ export const mutations = {
     state.alert_display_time = Number(payload)
   }
 }
-export const actions = {
-
-
-}
+export const actions = {}
 export const getters = {}

@@ -26,16 +26,11 @@
             ></v-text-field>
           </v-col>
           <v-spacer></v-spacer>
-          <v-btn
-            depressed
-            color="orange lighten-1 text-none white--text ma-3"
-            @click="handleAddUpdate(null)"
-          >
+          <v-btn depressed color="orange lighten-1 text-none white--text ma-3" @click="handleAddUpdate(null)" >
             <v-icon left>
               mdi-plus
             </v-icon>
-            Thêm mới hồ sơ</v-btn
-          >
+            Thêm mới hồ sơ</v-btn>
         </v-row>
         <v-data-table
           :headers="headers"
@@ -69,10 +64,7 @@
                     {{ $store.state.app.sex.MALE.text }}
                   </span>
                   <span
-                    v-else-if="
-                      item.gender === $store.state.app.sex.FEMALE.value
-                    "
-                  >
+                    v-else-if="item.gender === $store.state.app.sex.FEMALE.value">
                     {{ $store.state.app.sex.FEMALE.text }}
                   </span>
                   <span v-else>
@@ -82,40 +74,23 @@
               </div>
             </div>
           </template>
-
           <template v-slot:[`item.active`]="{ item }">
-            <v-menu
-              max-width="200"
-              transition="scroll-y-transition"
-              offset-x
-              left
-            >
+            <v-menu max-width="200" transition="scroll-y-transition" offset-x left>
               <template v-slot:activator="{ on }">
                 <div class="cp" v-on="on">
                   <v-icon>mdi-dots-horizontal</v-icon>
                 </div>
               </template>
-
               <v-list>
                 <v-list-item>
                   <v-list-item-content>
-                    <v-list-item-title
-                      class="cp"
-                      @click="handleAddUpdate(item)"
-                    >
-                      Sửa hồ sơ
+                    <v-list-item-title class="cp" @click="handleAddUpdate(item)">Sửa hồ sơ
                     </v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
-
                 <v-list-item>
                   <v-list-item-content>
-                    <v-list-item-title
-                      class="cp"
-                      @click="handleOpenDelete(item)"
-                    >
-                      Xóa hồ sơ
-                    </v-list-item-title>
+                    <v-list-item-title class="cp" @click="handleOpenDelete(item)">Xóa hồ sơ</v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
               </v-list>
@@ -125,7 +100,7 @@
       </client-only>
     </cardGlobal>
     <v-row class="w-100 mb-5">
-      <v-col cols="2" md="2" class="d-flex align-center" >
+      <v-col cols="2" md="2" class="d-flex align-center">
         Tổng số: {{ (items || []).length === 0 ? 0 : items.length }}
       </v-col>
       <v-spacer></v-spacer>
@@ -138,26 +113,12 @@
           depressed="true"
           class="mt-1"
           @changePage="changePage"
-          @changePageSize="changePageSize"
-        >
+          @changePageSize="changePageSize">
         </pagination>
       </v-col>
     </v-row>
-    <addUpdate
-      :open="openAddUpdate"
-      :detailItem="detailItem"
-      @addItem="addItem"
-      @updateItem="updateItem"
-      @toggle="openAddUpdate = !openAddUpdate"
-    ></addUpdate>
-
-    <YesNoAlert
-      :open="openDelete"
-      alert-msg="Bạn chắc chắn muốn xóa hồ sơ này?"
-      @toggle="openDelete = !openDelete"
-      @OK="handleDelete"
-    >
-    </YesNoAlert>
+    <addUpdate :open="openAddUpdate" :detailItem="detailItem"  @addItem="addItem"  @updateItem="updateItem" @toggle="openAddUpdate = !openAddUpdate"></addUpdate>
+    <YesNoAlert :open="openDelete" alert-msg="Bạn chắc chắn muốn xóa hồ sơ này?" @toggle="openDelete = !openDelete" @OK="handleDelete"></YesNoAlert>
   </div>
 </template>
 <script>
@@ -223,20 +184,18 @@ export default {
       ]
     }
   },
-  data() {
-    return {
-      data,
-      items: [],
-      pageSize: 2,
-      page: 1,
-      pageCount: 1,
-      detailItem: {},
-      phoneNumber: '',
-      fullName: '',
-      openAddUpdate: false,
-      openDelete: false
-    }
-  },
+  data: () => ({
+    data,
+    items: [],
+    pageSize: 2,
+    page: 1,
+    pageCount: 1,
+    detailItem: {},
+    phoneNumber: '',
+    fullName: '',
+    openAddUpdate: false,
+    openDelete: false
+  }),
   mounted() {
     this.items = JSON.parse(localStorage.getItem('ListDataItem'))
   },
@@ -247,12 +206,7 @@ export default {
           this.items.splice(i, 1)
         }
       }
-      this.$store.dispatch('notification/set_notifications', {
-        icon: 'success',
-        timeout: 5000,
-        color: 'success',
-        text: `Hồ sơ ${this.detailItem.full_name} - ${this.detailItem.phone} xóa thành công`
-      })
+      this.$store.dispatch('notification/set_notifications', {icon: 'success',  timeout: 5000, color: 'success', text: `Hồ sơ ${this.detailItem.full_name} - ${this.detailItem.phone} xóa thành công` })
     },
     handleOpenDelete(value) {
       this.openDelete = true
@@ -283,22 +237,14 @@ export default {
       this.detailItem = item
     },
     searchName() {
-      this.items = JSON.parse(
-        localStorage.getItem('ListDataItem')
-      ).filter(item =>
-        item.full_name.toLowerCase().includes(this.fullName.toLowerCase())
-      )
+      this.items = JSON.parse(localStorage.getItem('ListDataItem')).filter(item => item.full_name.toLowerCase().includes(this.fullName.toLowerCase()))
     },
     searchPhone() {
-      this.items = JSON.parse(
-        localStorage.getItem('ListDataItem')
-      ).filter(item => item.phone.toString().includes(this.phoneNumber))
+      this.items = JSON.parse(localStorage.getItem('ListDataItem')).filter(item => item.phone.toString().includes(this.phoneNumber))
     },
-
     getItemIndex(item) {
       return this.items.indexOf(item) + 1
     },
-
     changePage(value) {
       this.page = value
     },
@@ -309,7 +255,6 @@ export default {
         this.$refs.pagination.reset()
       }
     }
-  },
-
+  }
 }
 </script>

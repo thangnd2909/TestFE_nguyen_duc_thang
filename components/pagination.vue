@@ -1,18 +1,10 @@
 <template>
   <v-col
-    :class="(depressed && 'depressed-pagination') + ' pt-0 pb-0'"
-    cols="12"
-  >
+    :class="(depressed && 'depressed-pagination') + ' pt-0 pb-0'" cols="12">
     <v-row no-gutters class="justify-sm-end justify-center">
-      <v-col class="col-auto" :key="pageCount" >
+      <v-col class="col-auto" :key="pageCount">
         <div class="ml-2">
-          <v-pagination
-            text
-            :value="page"
-            :length="pageCount"
-            @input="changePageButton($event)"
-            total-visible="10"
-          ></v-pagination>
+          <v-pagination text  :value="page" :length="pageCount"  @input="changePageButton($event)" total-visible="10" ></v-pagination>
         </div>
       </v-col>
     </v-row>
@@ -21,12 +13,10 @@
 <script>
 export default {
   props: ['pageCount', 'page', 'pageSize', 'depressed'],
-  data() {
-    return {
-      customPage: 1,
-      rerender: Math.random()
-    }
-  },
+  data: () => ({
+    customPage: 1,
+    rerender: Math.random()
+  }),
   methods: {
     changePageSize(value) {
       this.customPage = 1
@@ -70,7 +60,6 @@ export default {
   }
 }
 </script>
-
 <style lang="scss">
 .depressed-pagination {
   .v-pagination__item {
@@ -95,10 +84,8 @@ export default {
   }
 
   .v-pagination__item--active:hover {
-    background-color: #B71C1C!important;
-    border-color: #B71C1C !important;
+    background-color: #b71c1c !important;
+    border-color: #b71c1c !important;
   }
-
-
 }
 </style>

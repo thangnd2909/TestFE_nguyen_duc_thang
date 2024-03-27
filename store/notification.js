@@ -16,7 +16,6 @@ const mutations = {
     }
   }
 }
-
 const actions = {
   set_notifications(vueContext, payload) {
     vueContext.commit('set_notifications', payload)
@@ -25,7 +24,6 @@ const actions = {
     }, vueContext.rootState.app.alert_display_time)
   }
 }
-
 export default {
   state,
   mutations,
